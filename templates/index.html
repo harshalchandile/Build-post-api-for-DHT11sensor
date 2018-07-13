@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="refresh" content="5">
+
+<head>        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+        $.get("http://127.0.0.1:3000/sensor-data", function(data,status){
+            $( "#hum" ).append(data[data.length - 1].humidity)
+            $( "#temp" ).append(data[data.length - 1].temperature)
+        });
+});
+</script>
+</head>
+
+<body>
+    <h2>Humidity: <div id="hum"></div></h2>
+    <h2>Temperature: <div id="temp"></div> </h2>
+</body>
+
+</html>
